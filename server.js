@@ -6,7 +6,11 @@ const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const ToDoRoutes = require('./routes/ToDoRoutes');
 
-app.use(cors());
+app.use(cors({
+    origin: import.meta.env.VITE_APP_URL,
+    credentials: true
+}
+));
 app.use(express.json());
 app.use('/api', authRoutes);
 app.use('/api/todo', ToDoRoutes);
