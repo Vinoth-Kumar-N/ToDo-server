@@ -8,6 +8,7 @@ const ToDoRoutes = require('./routes/ToDoRoutes');
 
 app.use(cors({
     origin: import.meta.env.VITE_APP_URL,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }
 ));
