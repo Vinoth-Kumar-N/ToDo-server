@@ -7,7 +7,7 @@ const authRoutes = require('./routes/authRoutes');
 const ToDoRoutes = require('./routes/ToDoRoutes');
 
 app.use(cors({
-    origin: process.env.VITE_APP_URL || "https://todo-client-cyan.vercel.app",
+    origin: "https://todo-client-cyan.vercel.app",
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }
