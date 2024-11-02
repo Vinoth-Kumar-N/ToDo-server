@@ -9,7 +9,7 @@ async function registerUser(req, res){
     try{
         let { username, email, password } = req.body;
         const dup = await User.find({email});
-        if(dup && dup.length > 0) return res.status(400).send({ message: "User already exists" });
+        if(dup || dup.length > 0) return res.status(400).send({ message: "User already exists" });
         let user = new User({username, email, password});
         let result = await user.save();
         console.log(result);
