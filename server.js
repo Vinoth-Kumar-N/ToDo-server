@@ -22,6 +22,10 @@ app.listen(PORT, () => {
     console.log(`Server is running on port http://localhost:${PORT}`);
 })
 
+app.get('/', (req, res) => {
+    res.send('Hello vinoth server is running');
+})
+
 mongoose.connect(process.env.MONGO_URI).then(() => {
     console.log('Connected to MongoDB');
 }).catch((err) => {
